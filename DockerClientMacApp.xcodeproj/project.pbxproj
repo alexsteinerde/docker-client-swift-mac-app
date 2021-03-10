@@ -15,12 +15,12 @@
 		FA560A7225EE087800BF5052 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA560A7125EE087800BF5052 /* Assets.xcassets */; };
 		FA560A7525EE087800BF5052 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA560A7425EE087800BF5052 /* Preview Assets.xcassets */; };
 		FA560A7825EE087800BF5052 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA560A7625EE087800BF5052 /* Main.storyboard */; };
-		FA560A8525EE0B4000BF5052 /* DockerClientSwift in Frameworks */ = {isa = PBXBuildFile; productRef = FA560A8425EE0B4000BF5052 /* DockerClientSwift */; };
 		FA560A8825EE0BE500BF5052 /* NIO in Frameworks */ = {isa = PBXBuildFile; productRef = FA560A8725EE0BE500BF5052 /* NIO */; };
 		FA560B2A25EF5EFB00BF5052 /* ContainersListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA560B2925EF5EFB00BF5052 /* ContainersListView.swift */; };
 		FA560B2C25EF5F6900BF5052 /* SidebarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA560B2B25EF5F6900BF5052 /* SidebarView.swift */; };
 		FA560B2E25EF60A500BF5052 /* ImagesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA560B2D25EF60A500BF5052 /* ImagesListView.swift */; };
 		FA560B3025F172D900BF5052 /* GenericTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA560B2F25F172D900BF5052 /* GenericTableView.swift */; };
+		FA5A975625F940E500505C15 /* DockerClientSwift in Frameworks */ = {isa = PBXBuildFile; productRef = FA5A975525F940E500505C15 /* DockerClientSwift */; };
 		FAF9934325F7F2BB00DCFC86 /* ContainerTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF9934225F7F2BB00DCFC86 /* ContainerTableView.swift */; };
 /* End PBXBuildFile section */
 
@@ -50,8 +50,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA560A8525EE0B4000BF5052 /* DockerClientSwift in Frameworks */,
 				FA560A8825EE0BE500BF5052 /* NIO in Frameworks */,
+				FA5A975625F940E500505C15 /* DockerClientSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -155,8 +155,8 @@
 			);
 			name = DockerClientMacApp;
 			packageProductDependencies = (
-				FA560A8425EE0B4000BF5052 /* DockerClientSwift */,
 				FA560A8725EE0BE500BF5052 /* NIO */,
+				FA5A975525F940E500505C15 /* DockerClientSwift */,
 			);
 			productName = DockerClientMacApp;
 			productReference = FA560A6A25EE087800BF5052 /* DockerClientMacApp.app */;
@@ -186,8 +186,8 @@
 			);
 			mainGroup = FA560A6125EE087800BF5052;
 			packageReferences = (
-				FA560A8025EE090000BF5052 /* XCRemoteSwiftPackageReference "docker-client-swift" */,
 				FA560A8625EE0BE500BF5052 /* XCRemoteSwiftPackageReference "swift-nio" */,
+				FA5A975425F940E500505C15 /* XCRemoteSwiftPackageReference "docker-client-swift" */,
 			);
 			productRefGroup = FA560A6B25EE087800BF5052 /* Products */;
 			projectDirPath = "";
@@ -430,14 +430,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		FA560A8025EE090000BF5052 /* XCRemoteSwiftPackageReference "docker-client-swift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "file:///Users/alex/Developer/vapor4-beta/docker-client-swift";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
 		FA560A8625EE0BE500BF5052 /* XCRemoteSwiftPackageReference "swift-nio" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/apple/swift-nio.git";
@@ -446,18 +438,26 @@
 				minimumVersion = 2.26.0;
 			};
 		};
+		FA5A975425F940E500505C15 /* XCRemoteSwiftPackageReference "docker-client-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/alexsteinerde/docker-client-swift";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		FA560A8425EE0B4000BF5052 /* DockerClientSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = FA560A8025EE090000BF5052 /* XCRemoteSwiftPackageReference "docker-client-swift" */;
-			productName = DockerClientSwift;
-		};
 		FA560A8725EE0BE500BF5052 /* NIO */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = FA560A8625EE0BE500BF5052 /* XCRemoteSwiftPackageReference "swift-nio" */;
 			productName = NIO;
+		};
+		FA5A975525F940E500505C15 /* DockerClientSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FA5A975425F940E500505C15 /* XCRemoteSwiftPackageReference "docker-client-swift" */;
+			productName = DockerClientSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
