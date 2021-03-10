@@ -7,9 +7,11 @@
 
 import SwiftUI
 import DockerClientSwift
+import Combine
 
 struct ImagesListView: View {
     @EnvironmentObject var dockerClient: DockerClient
+    private let changeSubject = PassthroughSubject<Void, Never>()
     
     var body: some View {
         
@@ -18,8 +20,10 @@ struct ImagesListView: View {
                 .whenComplete({ result in
                     completion(result)
                 })
-        }, content: { images in
-            GenericTableView<DockerClientSwift.Image>(items: .constant(images)) {
+        }, changeSubject: changeSubject, content: { images in
+            ImageTableView(items: .constant(images), reload: {
+                changeSubject.send()
+            }) {
                 TableColumnBuilder<DockerClientSwift.Image>(name: "ID") { AnyView(Text($0.id.value)) }
                 TableColumnBuilder<DockerClientSwift.Image>(name: "Name") { AnyView(Text($0.repositoryTags.first?.repository ?? "")) }
                 TableColumnBuilder<DockerClientSwift.Image>(name: "Tag") { AnyView(Text($0.repositoryTags.first?.tag ?? "")) }

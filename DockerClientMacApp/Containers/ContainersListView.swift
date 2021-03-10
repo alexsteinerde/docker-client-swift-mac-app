@@ -8,9 +8,11 @@
 import SwiftUI
 import DockerClientSwift
 import NIO
+import Combine
 
 struct ContainersListView: View {
     @EnvironmentObject var dockerClient: DockerClient
+    private let changeSubject = PassthroughSubject<Void, Never>()
     
     var body: some View {
         GenericListLoadingView(loading: { completion in
@@ -18,12 +20,14 @@ struct ContainersListView: View {
                 .whenComplete({ result in
                     completion(result)
                 })
-        }, content: tableView(containers: ))
+        }, changeSubject: changeSubject, content: tableView(containers: ))
         .navigationTitle("Containers")
     }
 
-    func tableView(containers: [Container]) -> GenericTableView<Container> {
-        GenericTableView(items: .constant(containers)) {
+    func tableView(containers: [Container]) -> ContainerTableView {
+        ContainerTableView(items: .constant(containers), reload: {
+            changeSubject.send()
+        }) {
             TableColumnBuilder(name: "", builder: { (container: Container) in
                 AnyView(
                     Group {

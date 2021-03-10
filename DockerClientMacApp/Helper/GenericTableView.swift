@@ -14,7 +14,11 @@ import QuickLook
 import StoreKit
 import SwiftUI
 
-struct GenericTableView<T>: NSViewControllerRepresentable {
+protocol GenericTableViewProtocol: NSViewControllerRepresentable {
+    associatedtype T
+}
+
+struct GenericTableView<T>: GenericTableViewProtocol {
 
     @Binding var items: Array<T>?
     var columns: [TableColumnBuilder<T>]
@@ -29,6 +33,7 @@ struct GenericTableView<T>: NSViewControllerRepresentable {
     func updateNSViewController(_ nsViewController: GenericNSTableView<T>, context: Context) {
         nsViewController.refresh(items ?? [], columns: columns)
     }
+    
     init(items: Binding<Array<T>?>, @TableCellBuilder<T> columns: () -> [TableColumnBuilder<T>]) {
         self._items = items
         self.columns = columns()
@@ -74,6 +79,14 @@ class GenericNSTableView<T>: NSViewController, NSTableViewDelegate, NSTableViewD
         super.viewDidLoad()
     }
     
+    init() {
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLayout() {
         if !initialized {
             initialized = true
@@ -113,6 +126,7 @@ class GenericNSTableView<T>: NSViewController, NSTableViewDelegate, NSTableViewD
         scrollView.hasHorizontalScroller = false
         scrollView.hasVerticalScroller = true
     }
+    
     func numberOfRows(in tableView: NSTableView) -> Int {
         return sizes.count
     }

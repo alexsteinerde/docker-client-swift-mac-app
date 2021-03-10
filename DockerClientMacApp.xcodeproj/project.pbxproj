@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA0E15F825F92F6F003147DB /* ImageTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0E15F725F92F6F003147DB /* ImageTableView.swift */; };
 		FA1C772025F5F4D3002414DC /* GenericListLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1C771F25F5F4D3002414DC /* GenericListLoadingView.swift */; };
+		FA1C772425F5F684002414DC /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = FA1C772325F5F684002414DC /* LICENSE */; };
 		FA560A6E25EE087800BF5052 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA560A6D25EE087800BF5052 /* AppDelegate.swift */; };
 		FA560A7025EE087800BF5052 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA560A6F25EE087800BF5052 /* ContentView.swift */; };
 		FA560A7225EE087800BF5052 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA560A7125EE087800BF5052 /* Assets.xcassets */; };
@@ -19,10 +21,14 @@
 		FA560B2C25EF5F6900BF5052 /* SidebarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA560B2B25EF5F6900BF5052 /* SidebarView.swift */; };
 		FA560B2E25EF60A500BF5052 /* ImagesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA560B2D25EF60A500BF5052 /* ImagesListView.swift */; };
 		FA560B3025F172D900BF5052 /* GenericTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA560B2F25F172D900BF5052 /* GenericTableView.swift */; };
+		FAF9934325F7F2BB00DCFC86 /* ContainerTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF9934225F7F2BB00DCFC86 /* ContainerTableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FA0E15F725F92F6F003147DB /* ImageTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTableView.swift; sourceTree = "<group>"; };
 		FA1C771F25F5F4D3002414DC /* GenericListLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericListLoadingView.swift; sourceTree = "<group>"; };
+		FA1C772225F5F62C002414DC /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		FA1C772325F5F684002414DC /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		FA560A6A25EE087800BF5052 /* DockerClientMacApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DockerClientMacApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA560A6D25EE087800BF5052 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA560A6F25EE087800BF5052 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -36,6 +42,7 @@
 		FA560B2B25EF5F6900BF5052 /* SidebarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarView.swift; sourceTree = "<group>"; };
 		FA560B2D25EF60A500BF5052 /* ImagesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesListView.swift; sourceTree = "<group>"; };
 		FA560B2F25F172D900BF5052 /* GenericTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericTableView.swift; sourceTree = "<group>"; };
+		FAF9934225F7F2BB00DCFC86 /* ContainerTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerTableView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +58,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FA0E15F525F92F63003147DB /* Containers */ = {
+			isa = PBXGroup;
+			children = (
+				FA560B2925EF5EFB00BF5052 /* ContainersListView.swift */,
+				FAF9934225F7F2BB00DCFC86 /* ContainerTableView.swift */,
+			);
+			path = Containers;
+			sourceTree = "<group>";
+		};
+		FA0E15F625F92F67003147DB /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				FA560B2D25EF60A500BF5052 /* ImagesListView.swift */,
+				FA0E15F725F92F6F003147DB /* ImageTableView.swift */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
 		FA1C772125F5F506002414DC /* Helper */ = {
 			isa = PBXGroup;
 			children = (
@@ -63,6 +88,8 @@
 		FA560A6125EE087800BF5052 = {
 			isa = PBXGroup;
 			children = (
+				FA1C772325F5F684002414DC /* LICENSE */,
+				FA1C772225F5F62C002414DC /* README.md */,
 				FA560B2825EF5D7600BF5052 /* docker-client-swift */,
 				FA560A6C25EE087800BF5052 /* DockerClientMacApp */,
 				FA560A6B25EE087800BF5052 /* Products */,
@@ -84,8 +111,8 @@
 				FA560A6D25EE087800BF5052 /* AppDelegate.swift */,
 				FA560A6F25EE087800BF5052 /* ContentView.swift */,
 				FA560B2B25EF5F6900BF5052 /* SidebarView.swift */,
-				FA560B2925EF5EFB00BF5052 /* ContainersListView.swift */,
-				FA560B2D25EF60A500BF5052 /* ImagesListView.swift */,
+				FA0E15F525F92F63003147DB /* Containers */,
+				FA0E15F625F92F67003147DB /* Images */,
 				FA1C772125F5F506002414DC /* Helper */,
 				FA560A7125EE087800BF5052 /* Assets.xcassets */,
 				FA560A7625EE087800BF5052 /* Main.storyboard */,
@@ -178,6 +205,7 @@
 			files = (
 				FA560A7825EE087800BF5052 /* Main.storyboard in Resources */,
 				FA560A7525EE087800BF5052 /* Preview Assets.xcassets in Resources */,
+				FA1C772425F5F684002414DC /* LICENSE in Resources */,
 				FA560A7225EE087800BF5052 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -190,6 +218,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA560B3025F172D900BF5052 /* GenericTableView.swift in Sources */,
+				FA0E15F825F92F6F003147DB /* ImageTableView.swift in Sources */,
+				FAF9934325F7F2BB00DCFC86 /* ContainerTableView.swift in Sources */,
 				FA560B2A25EF5EFB00BF5052 /* ContainersListView.swift in Sources */,
 				FA560B2C25EF5F6900BF5052 /* SidebarView.swift in Sources */,
 				FA560A7025EE087800BF5052 /* ContentView.swift in Sources */,

@@ -6,17 +6,15 @@
 //
 
 import SwiftUI
+import Combine
 
-struct GenericListLoadingView<T>: View {
-    @State private var result: Result<[T], Error>? = nil
-    private var loading: (@escaping(Result<[T], Error>) -> Void) -> Void
-    private var content: ([T]) -> GenericTableView<T>
+struct GenericListLoadingView<T, U: GenericTableViewProtocol>: View {
+    @State var result: Result<[T], Error>? = nil
+    var loading: (@escaping(Result<[T], Error>) -> Void) -> Void
+    var changeSubject: PassthroughSubject<Void, Never>?
+    var content: ([T]) -> U
     
-    
-    init(loading: @escaping ( @escaping (Result<[T], Error>) -> Void) -> Void, content: @escaping ([T]) -> GenericTableView<T>) {
-        self.loading = loading
-        self.content = content
-    }
+    @State var bag = Set<AnyCancellable>()
     
     var body: some View {
         resultView
@@ -25,6 +23,13 @@ struct GenericListLoadingView<T>: View {
             loading { completion in
                 self.result = completion
             }
+            changeSubject?
+                .sink(receiveValue: { _ in
+                loading { completion in
+                    self.result = completion
+                }
+                })
+            .store(in: &bag)
         }
     }
     
