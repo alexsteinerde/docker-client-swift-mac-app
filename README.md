@@ -3,6 +3,11 @@
 
 This is a demo client implementation of the [Docker Client](https://github.com/alexsteinerde/docker-client-swift).
 
+## Demo
+This demo project shows you how to use the `DockerClient` library and how to implement a simple Mac app that lists all available containers and images.
+
+To use this demo, please make sure you have Docker installed and running. 
+
 ## License
 This project is released under the MIT license. See [LICENSE](LICENSE) for details.
 
