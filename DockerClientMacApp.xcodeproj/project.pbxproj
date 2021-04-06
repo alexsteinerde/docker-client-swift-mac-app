@@ -37,7 +37,6 @@
 		FA560A7725EE087800BF5052 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FA560A7925EE087800BF5052 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA560A7A25EE087800BF5052 /* DockerClientMacApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DockerClientMacApp.entitlements; sourceTree = "<group>"; };
-		FA560B2825EF5D7600BF5052 /* docker-client-swift */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "docker-client-swift"; path = "../../../Developer/vapor4-beta/docker-client-swift"; sourceTree = "<group>"; };
 		FA560B2925EF5EFB00BF5052 /* ContainersListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainersListView.swift; sourceTree = "<group>"; };
 		FA560B2B25EF5F6900BF5052 /* SidebarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarView.swift; sourceTree = "<group>"; };
 		FA560B2D25EF60A500BF5052 /* ImagesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesListView.swift; sourceTree = "<group>"; };
@@ -90,7 +89,6 @@
 			children = (
 				FA1C772325F5F684002414DC /* LICENSE */,
 				FA1C772225F5F62C002414DC /* README.md */,
-				FA560B2825EF5D7600BF5052 /* docker-client-swift */,
 				FA560A6C25EE087800BF5052 /* DockerClientMacApp */,
 				FA560A6B25EE087800BF5052 /* Products */,
 				FA560A8325EE0B4000BF5052 /* Frameworks */,
