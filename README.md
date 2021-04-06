@@ -3,6 +3,8 @@
 
 This is a demo client implementation of the [Docker Client](https://github.com/alexsteinerde/docker-client-swift).
 
+Disclaimer: This project is not a demonstration on how to use SwiftUI in the best way but instead on how it is possible to integrate the Docker client into a SwiftUI project.
+
 ## Demo
 This demo project shows you how to use the `DockerClient` library and how to implement a simple Mac app that lists all available containers and images.
 
